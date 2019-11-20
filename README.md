@@ -4,11 +4,11 @@ Proiect realizat de catre Tudor Ionut Elian, din cadrul Academiei de Studii Econ
 Nume: Tudor Ionut Elian
 Grupa: 1150
 
-## Specificatii proiect
-### Conform Alocarii, tema pentru Tudor Ionut Elian este Tema 16
-#### Descrierea temei : Notite privind lectiile invatate din proiecte software (integrare cu GitHub)
+## Specificatii proiect  
+### Conform Alocarii, tema pentru Tudor Ionut Elian este Tema 16  
+#### Descrierea temei : Notite privind lectiile invatate din proiecte software (integrare cu GitHub)  
 
-**Nume student**: Tudor Ionut Elian
-**Data incepere proiect**: 20 Noiembrie 2019
-**Server type** : Node.js cu framework-ul Express.js
-**Framework JS**: React.js
+**Nume student**: Tudor Ionut Elian  
+**Data incepere proiect**: 20 Noiembrie 2019  
+**Server type** : Node.js cu framework-ul Express.js 
+**Framework JS**: React.js  
