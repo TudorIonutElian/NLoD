@@ -1,0 +1,27 @@
+{
+  "name": "nlod-project",
+  "version": "1.0.0",
+  "description": "notite privind lectiile invatate din proiecte software - CSIE-ID-2019",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TudorIonutElian/NLoD.git"
+  },
+  "keywords": [
+    "notite",
+    "web",
+    "development"
+  ],
+  "author": "Tudor Ionut Elian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TudorIonutElian/NLoD/issues"
+  },
+  "homepage": "https://github.com/TudorIonutElian/NLoD#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
