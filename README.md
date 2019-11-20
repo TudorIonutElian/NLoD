@@ -1,4 +1,4 @@
-# NLoD
+# NLoD (Notice Learned on WebDevelopment Projects)
 Notite privind lectiile invatate din proiecte software - CSIE-ID-2019
 Proiect realizat de catre Tudor Ionut Elian, din cadrul Academiei de Studii Economice pentru materia Tehnologii Web.
 Nume: Tudor Ionut Elian
