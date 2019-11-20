@@ -8,7 +8,7 @@ Grupa: 1150
 ### Conform Alocarii, tema pentru Tudor Ionut Elian este Tema 16\
 #### Descrierea temei : Notite privind lectiile invatate din proiecte software (integrare cu GitHub)\
 
-**Nume student**: Tudor Ionut Elian  
-**Data incepere proiect**: 20 Noiembrie 2019  
-**Server type** : Node.js cu framework-ul Express.js 
-**Framework JS**: React.js  
+**Nume student**: Tudor Ionut Elian\
+**Data incepere proiect**: 20 Noiembrie 2019\
+**Server type** : Node.js cu framework-ul Express.j\
+**Framework JS**: React.js\
