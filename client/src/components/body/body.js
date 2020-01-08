@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Utilizatori from './utilizatori/utilizatori';
+import AdaugaUtilizator from './adauga_utilizator/adauga_utilizator';
 
 class Body extends Component{
     
@@ -8,6 +9,7 @@ class Body extends Component{
     return(
       <div>        
         <Utilizatori/>
+        <AdaugaUtilizator/>
       </div>
     )
   }
