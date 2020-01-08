@@ -81,8 +81,8 @@ app.get('/api/roluri', (req, res) => {
 
 
 //Afisare rol dupa id
-app.post('/api/roluri/:id', (req, res) => {
-    res.send(`Sunt afisate rolurile utilizatorilor dupa id`);
+app.post('/api/utilizatori/adauga', (req, res) => {
+    console.log(req.body);
 });
 
 
