@@ -30,7 +30,6 @@ app.get('/api/utilizatori', (req, res) => {
     connection.query('SELECT * FROM `utilizatori`', (err, users, fields)=>{
         res.json(users);
     }); 
-    
 });
 
 //Afisare profil user (Functioneaza)
@@ -82,7 +81,7 @@ app.get('/api/roluri', (req, res) => {
 
 
 //Afisare rol dupa id
-app.get('/api/roluri/:id', (req, res) => {
+app.post('/api/roluri/:id', (req, res) => {
     res.send(`Sunt afisate rolurile utilizatorilor dupa id`);
 });
 

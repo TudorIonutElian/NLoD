@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import './utilizatori.css';
 import Utilizator from './utilizator.js';
 
 class Utilizatori extends Component{
@@ -17,11 +18,11 @@ class Utilizatori extends Component{
   
   render(){
     const utilizatori = this.state.utilizatori.map(utilizator => 
-      <Utilizator key={utilizator.user_id} id={utilizator.user_id} username={utilizator.user_nume}/>
+      <Utilizator key={utilizator.user_id} id={utilizator.user_id} username={utilizator.user_nume} casa="1"/>
     )
     return(
       <div>
-        <h4>Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
+        <h4 className="users-found">Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
         {utilizatori}
       </div>
     )
