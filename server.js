@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 
 const app = express();
-app.use(bodyParser.json());
 app.use(express.urlencoded({
     extended: true
 }))
@@ -29,8 +28,9 @@ connection.connect();
 //Setare route pentru GET request (Functioneaza)
 app.get('/api/utilizatori', (req, res) => {
     connection.query('SELECT * FROM `utilizatori`', (err, users, fields)=>{
-		res.send(users);
+        res.json(users);
     }); 
+    
 });
 
 //Afisare profil user (Functioneaza)

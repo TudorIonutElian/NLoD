@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h2>React</h2>
-    </div>
-  );
+import Header from './components/header/header';
+import Body from './components/body/body';
+import Footer from './components/footer/footer';
+
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      status: 1
+    };
+  }
+  
+  render(){
+    return(
+      <div>        
+        <Header/>
+        <Body/>
+        <Footer/>
+      </div>
+    )
+  }
+
 }
 
 export default App;
