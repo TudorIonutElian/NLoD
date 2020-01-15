@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import './utilizatori.css';
-import Utilizator from './utilizator.js';
 
 class Utilizatori extends Component{
  constructor(){
@@ -16,15 +15,43 @@ class Utilizatori extends Component{
     .then(utilizatori => this.setState({utilizatori: utilizatori.data}));
   }
   
+  
   render(){
     const utilizatori = this.state.utilizatori.map(utilizator => 
-      <Utilizator key={utilizator.user_id} id={utilizator.user_id} username={utilizator.user_nume} casa="1"/>
+      <tr key={utilizator.user_id}>
+        <td width="5">{utilizator.user_id}</td>
+        <td width="10">{utilizator.user_nume}</td>
+        <td width={10}>0</td>
+        <td><button className="vizualizare_utilizator_notite">Vizualizare notite</button></td>
+        <td><button className="sterge_utilizator">Sterge Utilizator</button></td>
+      </tr>
     )
     return(
       <div>
-        <h4 className="users-found">Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
-        
-        {utilizatori}
+        <div className="utilizatori-form">
+          <form action="/api/utilizatori" method="POST">
+              <label>Username</label>
+              <input type="text" name="nume_utilizator"/>
+              <label>Parola</label>
+              <input type="text" name="parola_utilizator"/>
+              <button onClick={this.adaugaUtilizatorHandler}>Adauga utilizator</button>
+          </form>
+        </div>
+        <div className="utilizatori-all">
+          <h4 className="users-found">Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
+          <table className="users-table">
+            <tbody width="100%">
+                <tr className="tr-header">
+                  <td>ID utilizator</td>
+                  <td>Nume utilizator</td>
+                  <td>Notite utilizator</td>
+                  <td>Vizualizare notite</td>
+                  <td>Sterge Utilizator</td>
+                </tr>
+              {utilizatori}
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   }

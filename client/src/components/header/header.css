@@ -1,5 +1,24 @@
 .App-Header {
-    background-color: #3498db;
+    background-color: #0073d1;
     color:#fff;
+    padding: 10px ;
+}
+.App-Header ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+.App-Header ul li {
+    list-style: none;
+    color: inherit;
+    background-color: #0fe4ae;
     padding: 10px;
+    border-radius: 2px;
+    margin: 0 5px;
+}
+.App-Header ul li a {
+    text-decoration: none;
+    color: inherit;
 }

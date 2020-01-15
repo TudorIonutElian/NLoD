@@ -1,8 +1,48 @@
 .users-found{
-    color: red;
+    color: #000;
+    background-color: lightsalmon;
+    display: block;
+    padding: 10px 0;
 }
 
-.tbody-tr-td{
-    background-color: cornflowerblue;
+.users-table{
+    width: 100%;
     text-align: center;
+}
+td{
+    padding: 10px;
+}
+
+tr:hover{
+    background-color: #058bb4;
+    color: #ffffff;
+    font-weight: bold;
+}
+.tr-header td{ 
+    width: 33.33%;
+}
+
+.utilizatori-form form{
+    width: 100%;
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.vizualizare_utilizator_notite,
+.sterge_utilizator {
+    padding: 5px;
+    outline: none;
+    color: #ffffff;
+}
+.vizualizare_utilizator_notite{
+    background-color: #19b5fe;
+}
+.sterge_utilizator{
+    background-color: #fe1919;
+}
+
+.utilizatori-form form input{
+    height: 30px;
 }

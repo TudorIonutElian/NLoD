@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
-
 import './App.css';
 
 import Header from './components/header/header';
 import Body from './components/body/body';
-import Footer from './components/footer/footer';
 
 class App extends Component{
   constructor(){
     super();
     this.state = {
-      status: 1
+      urlStatus: ""
     };
+  }
+
+  componentDidMount(){
+    let url = window.location.pathname;
+    this.setState({urlStatus:url});
   }
   
   render(){
     return(
-      <div>        
+      <div className="Application">        
         <Header/>
         <Body/>
-        <Footer/>
       </div>
     )
   }
