@@ -3,9 +3,8 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 
 const app = express();
-app.use(express.urlencoded({
-    extended: true
-}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 const database = {
     dataName: 'STOpB6h9xd',
@@ -47,6 +46,23 @@ app.get('/api/utilizatori/:id', (req, res) => {
 		res.send('ID-ul introdus este invalid! Va rugam sa introduceti un ID valid');
 	}
 	
+});
+
+//Adaugare utilizatori
+app.post('/api/utilizatori', (req, res, next) => {
+    let username = req.body.nume_utilizator.toString();
+    let parola = req.body.nume_utilizator.toString();
+    let sqlQuery = `INSERT INTO utilizatori (user_nume, user_parola) VALUES("${username}", "${parola}")`;
+    connection.query(sqlQuery, (err, result) => {
+       if(err){
+        console.log(err);
+       }
+       res.writeHead(301,
+        {Location: '/api/utilizatori'}
+      );
+        res.end();
+    });
+    
 });
 
 //Afisare toate notitele (Functioneaza)

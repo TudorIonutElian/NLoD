@@ -10,7 +10,7 @@ adaugaUtilizatorHandler = (event)=>{
   render(){
     return(
       <div className="AdaugaUtilizator">        
-        <form action="/api/utilizatori/adauga" method="POST">
+        <form action="/api/utilizatori" method="POST">
             <label>Username</label>
             <input type="text" name="nume_utilizator"/>
             <label>Parola</label>

@@ -23,6 +23,7 @@ class Utilizatori extends Component{
     return(
       <div>
         <h4 className="users-found">Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
+        
         {utilizatori}
       </div>
     )
