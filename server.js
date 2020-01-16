@@ -14,6 +14,11 @@ const database = {
     port: 3306
 };
 
+const data = {
+    users: [],
+    notite: []
+};
+
 const connection = mysql.createConnection({
     host: database.server,
     user: database.username,

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 
 import Utilizatori from './utilizatori/utilizatori';
+import Notite from './notite/notite';
 
 class Body extends Component{
   constructor(){
     super();
     this.state = {
-      urlStatus: ""
+      urlStatus: "",
     };
   }
 
@@ -16,10 +17,15 @@ class Body extends Component{
   }
     
   render(){
-    console.log(this.state.urlStatus);
+    let response;
+    if(window.location.pathname === "/api/utilizatori" || window.location.pathname === "/"){
+        response = <Utilizatori/>;
+    }else if(window.location.pathname === "/api/notite"){
+        response = <Notite/>;
+    }
     return(
-      <div>        
-        <Utilizatori/>
+      <div>
+        {response}
       </div>
     )
   }o
