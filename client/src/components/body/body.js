@@ -20,19 +20,18 @@ class Body extends Component{
   render(){
     let response;
     if(window.location.pathname === "/api/utilizatori" || window.location.pathname === "/"){
-        response = <Utilizatori/>;
+        response = <Utilizatori utilizatori={this.props.data.utilizatori} notite={this.props.data.notite}/>;
     }else if(window.location.pathname === "/api/notite"){
-        response = <Notite/>;
+        response = <Notite notite={this.props.data.notite} utilizatori={this.props.data.utilizatori}/>;
     }else if(window.location.pathname === "/api/roluri"){
-      response = <Roluri />
+      response = <Roluri roluri={this.props.data.roluri}/>
     }
     return(
       <div>
         {response}
       </div>
     )
-  }o
-
+  }
 }
 
 export default Body;

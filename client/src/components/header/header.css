@@ -23,6 +23,9 @@
     text-decoration: none;
     color: inherit;
 }
+.App-Header ul li a span {
+    color: #f53302;
+}
 .App-Header ul li:hover{
     background-color: #d0e6e0;
 }

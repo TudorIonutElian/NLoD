@@ -23,9 +23,9 @@ class Header extends Component{
       <div className="App-Header">        
         <ul>
           <li><a href="/">Acasa</a></li>
-          <li><a href="/" onClick={this.afiseazaUtilizatori}>Utilizatori</a></li>
-          <li><a href="/" onClick={this.afiseazaNotite}>Notite</a></li>
-          <li><a href="/" onClick={this.afiseazaRoluri}>Roluri</a></li>
+          <li><a href="/" onClick={this.afiseazaUtilizatori}>Utilizatori (<span>{this.props.users}</span>)</a></li>
+          <li><a href="/" onClick={this.afiseazaNotite}>Notite (<span>{this.props.notes}</span>)</a></li>
+          <li><a href="/" onClick={this.afiseazaRoluri}>Roluri (<span>{this.props.roles}</span>)</a></li>
         </ul>
       </div>
     )

@@ -4,16 +4,6 @@ import axios from 'axios';
 import './notite.css';
 
 class Notite extends Component{
-  constructor(){
-    super();
-    this.state = {
-      notite: []
-    }
-  }
-   componentDidMount() {
-     axios.get('/api/notite')
-     .then(notite => this.setState({notite: notite.data}));
-   }
 
   stergeNotita = (id) => {
     const form = document.createElement('form');
@@ -32,7 +22,7 @@ class Notite extends Component{
   }
 
   render(){
-    const notite = this.state.notite.map(notita => 
+    const notite = this.props.notite.map(notita => 
       <tr key={notita.notite_id}>
         <td width="5">{notita.notite_id}</td>
         <td width="10">{notita.notite_titlu}</td>
@@ -41,9 +31,12 @@ class Notite extends Component{
         <td><button onClick={()=>this.stergeNotita(notita.notite_id)} className="sterge_notita">Sterge notita</button></td>
       </tr>
     );
+    const utilizatoriOption = this.props.utilizatori.map(utlizator => 
+      <option key={utlizator.user_id} value={utlizator.user_id}>{utlizator.user_nume}</option>
+    );
     return(
       <div className="notite-all">
-          <h4 className="notite-found">Am indetificat <span>{this.state.notite.length}</span> notite in baza de date!</h4>        
+          <h4 className="notite-found">Am indetificat <span>{this.props.notite.length}</span> notite in baza de date!</h4>        
           <table className="users-table">
             <tbody width="100%">
                 <tr className="tr-header">
@@ -56,6 +49,14 @@ class Notite extends Component{
               {notite}
             </tbody>
           </table>
+          <div id="adaugareNotita">
+            <form action="/api/notite/adauga" method="POST">
+              <input type="text" name="titlu" placeholder="Introduceti titlul"/>
+              <textarea rows="4" cols="100" name="descriere"></textarea>
+              <select name="utilizator">{utilizatoriOption}</select>
+              <button class="adaugareNotita">Adauga Notita</button>
+            </form>
+          </div>
         </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './App.css';
 
 import Header from './components/header/header';
@@ -8,21 +9,27 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      urlStatus: ""
+      utilizatori: [],
+      notite: [],
+      roluri: []
     };
   }
 
-  componentDidMount(){
-    let url = window.location.pathname;
-    this.setState({urlStatus:url});
+  async componentDidMount(){
+    await(axios.get('/api/utilizatori').then(utilizatori => this.setState({utilizatori: utilizatori.data})));
+    await(axios.get('/api/notite').then(notite => this.setState({notite: notite.data})));
+    await(axios.get('/api/roluri').then(roluri => this.setState({roluri: roluri.data})));
   }
   
   render(){
+    const numarUtilizatori = this.state.utilizatori.length;
+    const numarNotite = this.state.notite.length;
+    const numarRoluri = this.state.roluri.length;
 
     return(
       <div className="Application">        
-        <Header/>
-        <Body/>
+        <Header users={numarUtilizatori} notes={numarNotite} roles={numarRoluri}/>
+        <Body data={this.state}/>
       </div>
     )
   }

@@ -68,6 +68,24 @@ app.post('/api/utilizatori/:id', (req, res, next) => {
     });
 });
 
+//Adaugare notita (Functioneaza)
+app.post('/api/notite/adauga', (req, res, next) => {
+    let titlu = req.body.titlu;
+    let descriere = req.body.descriere;
+    let user = req.body.utilizator;
+
+    let sqlQuery = `INSERT INTO notite (notite_titlu, notite_descriere, user_id) VALUES("${titlu}", "${descriere}", "${user}")`;
+    connection.query(sqlQuery, (err, result) => {
+       if(err){
+        console.log(err);
+       }
+       res.writeHead(301,
+        {Location: '/api/notite'}
+      );
+        res.end();
+    });
+});
+
 
 //Stergere notite (Functioneaza)
 app.post('/api/notite/:id', (req, res, next) => {

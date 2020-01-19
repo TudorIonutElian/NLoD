@@ -4,16 +4,6 @@ import axios from 'axios';
 import './roluri.css';
 
 class Roluri extends Component{
-  constructor(){
-    super();
-    this.state = {
-      roluri: []
-    }
-  }
-   componentDidMount() {
-     axios.get('/api/roluri')
-     .then(roluri => this.setState({roluri: roluri.data}));
-   }
 
   stergeRol = (id) => {
     const form = document.createElement('form');
@@ -32,13 +22,13 @@ class Roluri extends Component{
   }
 
   vizualizareRol = (id) =>{
-    const data = this.state.roluri[id];
+    const data = this.props.roluri[id];
     let myWindow = window.open(`Vizualizare Rol ${data.rol_text}`, `Vizualizare Rol ${data.rol_text}`, "width=200,height=100");
       myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
   }
 
   render(){
-    const roluri = this.state.roluri.map(rol => 
+    const roluri = this.props.roluri.map(rol => 
       <tr key={rol.rol_id}>
         <td>{rol.rol_id}</td>
         <td>{rol.rol_text}</td>
@@ -48,7 +38,7 @@ class Roluri extends Component{
     );
     return(
       <div className="roluri-all">
-          <h4 className="roluri-found">Am indetificat <span>{this.state.roluri.length}</span> roluri in baza de date!</h4>        
+          <h4 className="roluri-found">Am indetificat <span>{this.props.roluri.length}</span> roluri in baza de date!</h4>        
           <table className="roluri-table">
             <tbody width="100%">
                 <tr className="tr-header">
