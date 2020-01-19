@@ -66,6 +66,22 @@ app.post('/api/utilizatori/:id', (req, res, next) => {
     });
 });
 
+
+//Stergere notite
+app.post('/api/notite/:id', (req, res, next) => {
+    let id = req.body.id.toString();
+    let sqlQuery = `DELETE FROM notite WHERE notite_id=${id}`;
+    connection.query(sqlQuery, (err, result) => {
+       if(err){
+        console.log(err);
+       }
+       res.writeHead(301,
+        {Location: '/api/notite'}
+      );
+        res.end();
+    });
+});
+
 //Afisare toate notitele (Functioneaza)
 app.get('/api/notite', (req, res) => {
    connection.query(`SELECT * FROM notite`, (err, notite, fields)=>{

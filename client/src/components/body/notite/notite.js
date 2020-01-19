@@ -15,14 +15,30 @@ class Notite extends Component{
      .then(notite => this.setState({notite: notite.data}));
    }
 
+  stergeNotita = (id) => {
+    const form = document.createElement('form');
+    form.method = "POST";
+    form.action = `/api/notite/${id}`;
+
+    const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = "id";
+        hiddenField.value = id;
+
+        form.appendChild(hiddenField);
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+
   render(){
     const notite = this.state.notite.map(notita => 
       <tr key={notita.notite_id}>
         <td width="5">{notita.notite_id}</td>
         <td width="10">{notita.notite_titlu}</td>
         <td width="10">{notita.notite_descriere}</td>
-        <td><button className="vizualizare_utilizator_notite">Vizualizare notita</button></td>
-        <td><button className="sterge_utilizator">Sterge notita</button></td>
+        <td><button className="vizualizare_notita">Vizualizare notita</button></td>
+        <td><button onClick={()=>this.stergeNotita(notita.notite_id)} className="sterge_notita">Sterge notita</button></td>
       </tr>
     );
     return(
