@@ -1,6 +1,7 @@
 .App-Header {
     background-color: #0073d1;
-    color:#fff;
+    color:#000;
+    font-weight: bold;
     padding: 10px ;
 }
 .App-Header ul{
@@ -21,4 +22,7 @@
 .App-Header ul li a {
     text-decoration: none;
     color: inherit;
+}
+.App-Header ul li:hover{
+    background-color: #d0e6e0;
 }

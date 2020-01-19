@@ -1,8 +1,15 @@
 .users-found{
     color: #000;
-    background-color: lightsalmon;
+    background-color: #7affb6;
     display: block;
     padding: 10px 0;
+    text-align: center;
+}
+.users-found span {
+    display: inline-block;
+    padding: 5px;
+    background-color: #0a75a7;
+    color: #ffffff;
 }
 
 .users-table{

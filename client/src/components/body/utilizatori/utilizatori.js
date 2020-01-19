@@ -15,6 +15,21 @@ class Utilizatori extends Component{
     .then(utilizatori => this.setState({utilizatori: utilizatori.data}));
   }
   
+  stergeUtilizator = (id) =>{
+    const form = document.createElement('form');
+    form.method = "POST";
+    form.action = `/api/utilizatori/${id}`;
+
+    const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = "id";
+        hiddenField.value = id;
+
+        form.appendChild(hiddenField);
+
+    document.body.appendChild(form);
+    form.submit();
+  }
   
   render(){
     const utilizatori = this.state.utilizatori.map(utilizator => 
@@ -23,7 +38,7 @@ class Utilizatori extends Component{
         <td width="10">{utilizator.user_nume}</td>
         <td width={10}>0</td>
         <td><button className="vizualizare_utilizator_notite">Vizualizare notite</button></td>
-        <td><button className="sterge_utilizator">Sterge Utilizator</button></td>
+        <td><button onClick={()=> this.stergeUtilizator(utilizator.user_id)} className="sterge_utilizator">Sterge Utilizator</button></td>
       </tr>
     )
     return(
@@ -38,7 +53,7 @@ class Utilizatori extends Component{
           </form>
         </div>
         <div className="utilizatori-all">
-          <h4 className="users-found">Am indetificat {utilizatori.length} utilizatori inregistrati in baza de date!</h4>        
+          <h4 className="users-found">Am indetificat <span>{utilizatori.length}</span> utilizatori inregistrati in baza de date!</h4>        
           <table className="users-table">
             <tbody width="100%">
                 <tr className="tr-header">

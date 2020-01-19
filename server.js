@@ -50,7 +50,20 @@ app.post('/api/utilizatori', (req, res, next) => {
       );
         res.end();
     });
-    
+});
+
+app.post('/api/utilizatori/:id', (req, res, next) => {
+    let id = req.body.id.toString();
+    let sqlQuery = `DELETE FROM utilizatori WHERE user_id=${id}`;
+    connection.query(sqlQuery, (err, result) => {
+       if(err){
+        console.log(err);
+       }
+       res.writeHead(301,
+        {Location: '/api/utilizatori'}
+      );
+        res.end();
+    });
 });
 
 //Afisare toate notitele (Functioneaza)
