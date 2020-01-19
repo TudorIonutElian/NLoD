@@ -1,0 +1,25 @@
+.roluri-found{
+    color: #000;
+    background-color: #7affb6;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+}
+.roluri-found span{
+    display: inline-block;
+    padding: 5px;
+    background-color: #0a75a7;
+    color: #ffffff;
+}
+.sterge_rol{
+    display: inline-block;
+    padding: 5px;
+    background-color: #f0607d;
+    color: #fff;
+    min-width: 150px;
+}
+.vizualizare_rol{
+    display: inline-block;
+    padding: 5px;
+    min-width: 150px;
+}

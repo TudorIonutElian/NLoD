@@ -36,7 +36,7 @@ app.get('/api/utilizatori', (req, res) => {
     }); 
 });
 
-//Adaugare utilizatori
+//Adaugare utilizatori (Functioneaza)
 app.post('/api/utilizatori', (req, res, next) => {
     let username = req.body.nume_utilizator.toString();
     let parola = req.body.nume_utilizator.toString();
@@ -52,6 +52,8 @@ app.post('/api/utilizatori', (req, res, next) => {
     });
 });
 
+
+//Stergere utilizator (Functioneaza)
 app.post('/api/utilizatori/:id', (req, res, next) => {
     let id = req.body.id.toString();
     let sqlQuery = `DELETE FROM utilizatori WHERE user_id=${id}`;
@@ -67,7 +69,7 @@ app.post('/api/utilizatori/:id', (req, res, next) => {
 });
 
 
-//Stergere notite
+//Stergere notite (Functioneaza)
 app.post('/api/notite/:id', (req, res, next) => {
     let id = req.body.id.toString();
     let sqlQuery = `DELETE FROM notite WHERE notite_id=${id}`;
@@ -92,7 +94,9 @@ app.get('/api/notite', (req, res) => {
 
 //Afisare roluri
 app.get('/api/roluri', (req, res) => {
-    res.json(`Sunt afisate rolurile utilizatorilor`);
+    connection.query('SELECT * FROM `roluri`', (err, roluri, fields)=>{
+        res.json(roluri);
+    }); 
 });
 
 const port = 5000;

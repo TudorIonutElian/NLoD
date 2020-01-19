@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Utilizatori from './utilizatori/utilizatori';
 import Notite from './notite/notite';
+import Roluri from './roluri/roluri';
 
 class Body extends Component{
   constructor(){
@@ -22,6 +23,8 @@ class Body extends Component{
         response = <Utilizatori/>;
     }else if(window.location.pathname === "/api/notite"){
         response = <Notite/>;
+    }else if(window.location.pathname === "/api/roluri"){
+      response = <Roluri />
     }
     return(
       <div>
